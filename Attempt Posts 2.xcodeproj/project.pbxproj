@@ -14,13 +14,17 @@
 		038822BE18207826002E55F1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 038822BD18207826002E55F1 /* main.m */; };
 		038822C218207826002E55F1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 038822C118207826002E55F1 /* AppDelegate.m */; };
 		038822C518207826002E55F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 038822C318207826002E55F1 /* Main.storyboard */; };
-		038822C818207826002E55F1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 038822C718207826002E55F1 /* ViewController.m */; };
 		038822CA18207826002E55F1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 038822C918207826002E55F1 /* Images.xcassets */; };
 		038822D118207826002E55F1 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 038822D018207826002E55F1 /* XCTest.framework */; };
 		038822D218207826002E55F1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 038822B118207826002E55F1 /* Foundation.framework */; };
 		038822D318207826002E55F1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 038822B518207826002E55F1 /* UIKit.framework */; };
 		038822DB18207826002E55F1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 038822D918207826002E55F1 /* InfoPlist.strings */; };
 		038822DD18207826002E55F1 /* Attempt_Posts_2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 038822DC18207826002E55F1 /* Attempt_Posts_2Tests.m */; };
+		038822E818207CCA002E55F1 /* Custom Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 038822E718207CCA002E55F1 /* Custom Cell.m */; };
+		038822EB182081A7002E55F1 /* PostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 038822EA182081A7002E55F1 /* PostViewController.m */; };
+		038822EE1820829C002E55F1 /* CreateNewPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 038822ED1820829C002E55F1 /* CreateNewPost.m */; };
+		038822F1182084DB002E55F1 /* EditPosts.m in Sources */ = {isa = PBXBuildFile; fileRef = 038822F0182084DB002E55F1 /* EditPosts.m */; };
+		03885763182088E200DD4041 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 03885762182088E200DD4041 /* Post.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,14 +49,22 @@
 		038822C018207826002E55F1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		038822C118207826002E55F1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		038822C418207826002E55F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		038822C618207826002E55F1 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		038822C718207826002E55F1 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		038822C918207826002E55F1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		038822CF18207826002E55F1 /* Attempt Posts 2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Attempt Posts 2Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		038822D018207826002E55F1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		038822D818207826002E55F1 /* Attempt Posts 2Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Attempt Posts 2Tests-Info.plist"; sourceTree = "<group>"; };
 		038822DA18207826002E55F1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		038822DC18207826002E55F1 /* Attempt_Posts_2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Attempt_Posts_2Tests.m; sourceTree = "<group>"; };
+		038822E618207CCA002E55F1 /* Custom Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Custom Cell.h"; sourceTree = "<group>"; };
+		038822E718207CCA002E55F1 /* Custom Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Custom Cell.m"; sourceTree = "<group>"; };
+		038822E9182081A7002E55F1 /* PostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostViewController.h; path = ../PostViewController.h; sourceTree = "<group>"; };
+		038822EA182081A7002E55F1 /* PostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostViewController.m; path = ../PostViewController.m; sourceTree = "<group>"; };
+		038822EC1820829C002E55F1 /* CreateNewPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateNewPost.h; sourceTree = "<group>"; };
+		038822ED1820829C002E55F1 /* CreateNewPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateNewPost.m; sourceTree = "<group>"; };
+		038822EF182084DB002E55F1 /* EditPosts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditPosts.h; sourceTree = "<group>"; };
+		038822F0182084DB002E55F1 /* EditPosts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditPosts.m; sourceTree = "<group>"; };
+		03885761182088E200DD4041 /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
+		03885762182088E200DD4041 /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,11 +124,15 @@
 		038822B718207826002E55F1 /* Attempt Posts 2 */ = {
 			isa = PBXGroup;
 			children = (
+				038822E9182081A7002E55F1 /* PostViewController.h */,
+				038822EA182081A7002E55F1 /* PostViewController.m */,
 				038822C018207826002E55F1 /* AppDelegate.h */,
 				038822C118207826002E55F1 /* AppDelegate.m */,
 				038822C318207826002E55F1 /* Main.storyboard */,
-				038822C618207826002E55F1 /* ViewController.h */,
-				038822C718207826002E55F1 /* ViewController.m */,
+				038822EF182084DB002E55F1 /* EditPosts.h */,
+				038822F0182084DB002E55F1 /* EditPosts.m */,
+				038822EC1820829C002E55F1 /* CreateNewPost.h */,
+				038822ED1820829C002E55F1 /* CreateNewPost.m */,
 				038822C918207826002E55F1 /* Images.xcassets */,
 				038822B818207826002E55F1 /* Supporting Files */,
 			);
@@ -126,6 +142,10 @@
 		038822B818207826002E55F1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				03885761182088E200DD4041 /* Post.h */,
+				03885762182088E200DD4041 /* Post.m */,
+				038822E618207CCA002E55F1 /* Custom Cell.h */,
+				038822E718207CCA002E55F1 /* Custom Cell.m */,
 				038822B918207826002E55F1 /* Attempt Posts 2-Info.plist */,
 				038822BA18207826002E55F1 /* InfoPlist.strings */,
 				038822BD18207826002E55F1 /* main.m */,
@@ -249,9 +269,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				038822C818207826002E55F1 /* ViewController.m in Sources */,
+				038822EB182081A7002E55F1 /* PostViewController.m in Sources */,
+				038822EE1820829C002E55F1 /* CreateNewPost.m in Sources */,
 				038822C218207826002E55F1 /* AppDelegate.m in Sources */,
 				038822BE18207826002E55F1 /* main.m in Sources */,
+				038822E818207CCA002E55F1 /* Custom Cell.m in Sources */,
+				038822F1182084DB002E55F1 /* EditPosts.m in Sources */,
+				03885763182088E200DD4041 /* Post.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,6 +484,7 @@
 				038822E218207826002E55F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		038822E318207826002E55F1 /* Build configuration list for PBXNativeTarget "Attempt Posts 2Tests" */ = {
 			isa = XCConfigurationList;
@@ -468,6 +493,7 @@
 				038822E518207826002E55F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

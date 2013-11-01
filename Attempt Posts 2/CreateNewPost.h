@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  CreateNewPost.h
 //  Attempt Posts 2
 //
 //  Created by Erika Martinez on 10/29/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface CreateNewPost : UITableViewController
 
 @end
