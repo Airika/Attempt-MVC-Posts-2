@@ -10,10 +10,8 @@
 		038822B218207826002E55F1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 038822B118207826002E55F1 /* Foundation.framework */; };
 		038822B418207826002E55F1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 038822B318207826002E55F1 /* CoreGraphics.framework */; };
 		038822B618207826002E55F1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 038822B518207826002E55F1 /* UIKit.framework */; };
-		038822BC18207826002E55F1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 038822BA18207826002E55F1 /* InfoPlist.strings */; };
 		038822BE18207826002E55F1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 038822BD18207826002E55F1 /* main.m */; };
 		038822C218207826002E55F1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 038822C118207826002E55F1 /* AppDelegate.m */; };
-		038822C518207826002E55F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 038822C318207826002E55F1 /* Main.storyboard */; };
 		038822CA18207826002E55F1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 038822C918207826002E55F1 /* Images.xcassets */; };
 		038822D118207826002E55F1 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 038822D018207826002E55F1 /* XCTest.framework */; };
 		038822D218207826002E55F1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 038822B118207826002E55F1 /* Foundation.framework */; };
@@ -24,7 +22,13 @@
 		038822EB182081A7002E55F1 /* PostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 038822EA182081A7002E55F1 /* PostViewController.m */; };
 		038822EE1820829C002E55F1 /* CreateNewPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 038822ED1820829C002E55F1 /* CreateNewPost.m */; };
 		038822F1182084DB002E55F1 /* EditPosts.m in Sources */ = {isa = PBXBuildFile; fileRef = 038822F0182084DB002E55F1 /* EditPosts.m */; };
-		03885763182088E200DD4041 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 03885762182088E200DD4041 /* Post.m */; };
+		038B3CB01825706200F46555 /* Textview.m in Sources */ = {isa = PBXBuildFile; fileRef = 038B3CAF1825706200F46555 /* Textview.m */; };
+		038F33151826B2D1005713E4 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 038F33141826B2D1005713E4 /* Post.m */; };
+		038F33171826B3B3005713E4 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 038F33161826B3B3005713E4 /* Storyboard.storyboard */; };
+		038F33191826BC66005713E4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 038F33181826BC66005713E4 /* InfoPlist.strings */; };
+		038F331A1826BC66005713E4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 038F33181826BC66005713E4 /* InfoPlist.strings */; };
+		038F331C1826BCAE005713E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 038F331B1826BCAE005713E4 /* Main.storyboard */; };
+		038F331D1826BCAE005713E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 038F331B1826BCAE005713E4 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,12 +47,10 @@
 		038822B318207826002E55F1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		038822B518207826002E55F1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		038822B918207826002E55F1 /* Attempt Posts 2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Attempt Posts 2-Info.plist"; sourceTree = "<group>"; };
-		038822BB18207826002E55F1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		038822BD18207826002E55F1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		038822BF18207826002E55F1 /* Attempt Posts 2-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Attempt Posts 2-Prefix.pch"; sourceTree = "<group>"; };
 		038822C018207826002E55F1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		038822C118207826002E55F1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		038822C418207826002E55F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		038822C918207826002E55F1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		038822CF18207826002E55F1 /* Attempt Posts 2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Attempt Posts 2Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		038822D018207826002E55F1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -63,8 +65,13 @@
 		038822ED1820829C002E55F1 /* CreateNewPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateNewPost.m; sourceTree = "<group>"; };
 		038822EF182084DB002E55F1 /* EditPosts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditPosts.h; sourceTree = "<group>"; };
 		038822F0182084DB002E55F1 /* EditPosts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditPosts.m; sourceTree = "<group>"; };
-		03885761182088E200DD4041 /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
-		03885762182088E200DD4041 /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
+		038B3CAE1825706200F46555 /* Textview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Textview.h; sourceTree = "<group>"; };
+		038B3CAF1825706200F46555 /* Textview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Textview.m; sourceTree = "<group>"; };
+		038F33131826B2D1005713E4 /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Post.h; path = ../Post.h; sourceTree = "<group>"; };
+		038F33141826B2D1005713E4 /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Post.m; path = ../Post.m; sourceTree = "<group>"; };
+		038F33161826B3B3005713E4 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		038F33181826BC66005713E4 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
+		038F331B1826BCAE005713E4 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,15 +131,18 @@
 		038822B718207826002E55F1 /* Attempt Posts 2 */ = {
 			isa = PBXGroup;
 			children = (
+				038F33161826B3B3005713E4 /* Storyboard.storyboard */,
+				038F331B1826BCAE005713E4 /* Main.storyboard */,
 				038822E9182081A7002E55F1 /* PostViewController.h */,
 				038822EA182081A7002E55F1 /* PostViewController.m */,
-				038822C018207826002E55F1 /* AppDelegate.h */,
-				038822C118207826002E55F1 /* AppDelegate.m */,
-				038822C318207826002E55F1 /* Main.storyboard */,
-				038822EF182084DB002E55F1 /* EditPosts.h */,
-				038822F0182084DB002E55F1 /* EditPosts.m */,
 				038822EC1820829C002E55F1 /* CreateNewPost.h */,
 				038822ED1820829C002E55F1 /* CreateNewPost.m */,
+				038822EF182084DB002E55F1 /* EditPosts.h */,
+				038822F0182084DB002E55F1 /* EditPosts.m */,
+				038B3CAE1825706200F46555 /* Textview.h */,
+				038B3CAF1825706200F46555 /* Textview.m */,
+				038822C018207826002E55F1 /* AppDelegate.h */,
+				038822C118207826002E55F1 /* AppDelegate.m */,
 				038822C918207826002E55F1 /* Images.xcassets */,
 				038822B818207826002E55F1 /* Supporting Files */,
 			);
@@ -142,12 +152,12 @@
 		038822B818207826002E55F1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				03885761182088E200DD4041 /* Post.h */,
-				03885762182088E200DD4041 /* Post.m */,
+				038F33131826B2D1005713E4 /* Post.h */,
+				038F33141826B2D1005713E4 /* Post.m */,
 				038822E618207CCA002E55F1 /* Custom Cell.h */,
 				038822E718207CCA002E55F1 /* Custom Cell.m */,
+				038F33181826BC66005713E4 /* InfoPlist.strings */,
 				038822B918207826002E55F1 /* Attempt Posts 2-Info.plist */,
-				038822BA18207826002E55F1 /* InfoPlist.strings */,
 				038822BD18207826002E55F1 /* main.m */,
 				038822BF18207826002E55F1 /* Attempt Posts 2-Prefix.pch */,
 			);
@@ -248,9 +258,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				038F33171826B3B3005713E4 /* Storyboard.storyboard in Resources */,
 				038822CA18207826002E55F1 /* Images.xcassets in Resources */,
-				038822BC18207826002E55F1 /* InfoPlist.strings in Resources */,
-				038822C518207826002E55F1 /* Main.storyboard in Resources */,
+				038F33191826BC66005713E4 /* InfoPlist.strings in Resources */,
+				038F331C1826BCAE005713E4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,7 +269,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				038F331D1826BCAE005713E4 /* Main.storyboard in Resources */,
 				038822DB18207826002E55F1 /* InfoPlist.strings in Resources */,
+				038F331A1826BC66005713E4 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,8 +287,9 @@
 				038822C218207826002E55F1 /* AppDelegate.m in Sources */,
 				038822BE18207826002E55F1 /* main.m in Sources */,
 				038822E818207CCA002E55F1 /* Custom Cell.m in Sources */,
+				038B3CB01825706200F46555 /* Textview.m in Sources */,
 				038822F1182084DB002E55F1 /* EditPosts.m in Sources */,
-				03885763182088E200DD4041 /* Post.m in Sources */,
+				038F33151826B2D1005713E4 /* Post.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,22 +312,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		038822BA18207826002E55F1 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				038822BB18207826002E55F1 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		038822C318207826002E55F1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				038822C418207826002E55F1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		038822D918207826002E55F1 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (

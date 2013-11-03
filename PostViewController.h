@@ -10,17 +10,10 @@
 #import "CreateNewPost.h"
 #import "EditPosts.h"
 
-@interface PostViewController : UITableViewController <EditPostsDelegate>
-{
-    IBOutlet UITextField *userNameTextField;}
-
-@property (nonatomic, strong) UITextField *userNameTextField;
-
+@interface PostViewController : UITableViewController <theProtocol>
 
 @property (nonatomic, weak) IBOutlet UIBarButtonItem *editButton;
 
 - (IBAction)enterEditMode:(id)sender;
-
-@property (nonatomic) NSMutableArray *characters;
 
 @end

@@ -10,13 +10,16 @@
 #import "Custom Cell.h"
 #import "Post.h"
 #import "EditPosts.h"
+#import "CreateNewPost.h"
 
 @interface PostViewController ()
+
+@property (nonatomic) NSMutableArray *characters;
 
 @end
 
 @implementation PostViewController
-@synthesize userNameTextField;
+
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -31,6 +34,17 @@
 {
     [super viewDidLoad];
     
+    NSString *docsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+	NSString *filename = [docsPath stringByAppendingPathComponent:@"postsArchive"];
+	
+	if ([NSKeyedUnarchiver unarchiveObjectWithFile:filename])
+	{
+		NSLog(@"Unarchiving existing posts");
+		_characters =  [NSKeyedUnarchiver unarchiveObjectWithFile:filename];
+	}
+	else
+	{
+    
     self.tableView.dataSource = self;
     self.tableView.delegate =self;
     
@@ -40,26 +54,21 @@
     post1.content = @"Smash!";
     
     Post *post2 = [[Post alloc] init];
-    post2.title = @"Chosen Four";
-    post2.userName = @"Ness";
-    post2.content = @"Smash!";
+    post2.title = @"New";
+    post2.userName = @"Paula";
+    post2.content = @"Pray";
     
-    _characters = [NSMutableArray arrayWithObjects: post1, post2, nil];
-
-    //
-    //    title = [[NSArray alloc] initWithObjects:@"Chosen Four", nil];
-    //    userName = [[NSArray alloc] initWithObjects:@"Ness",@"Paula",@"Poo",@"Jeff", nil];
-    //    content = [[NSArray alloc] initWithObjects:@"Smash!",@"Pray",@"Meditate",@"Rocket Bottle", nil];
+    Post *post3 = [[Post alloc] init];
+    post2.title = @"Tech";
+    post2.userName = @"Jeff";
+    post2.content = @"Bottle Rocket!";
+        
+        
     
-    
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    _characters = [NSMutableArray arrayWithObjects: post1, post2, post3, nil];
+    [NSKeyedArchiver archiveRootObject:_characters toFile:filename];
+    }
 }
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -82,30 +91,99 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
+    Custom_Cell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    Custom_Cell *Cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (!Cell) {
-        Cell = [[Custom_Cell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier: CellIdentifier];
-    }
+    // Configure the cell...
+    cell.userName.text = [_characters [indexPath.row] userName];
+    cell.title.text = [_characters[indexPath.row] title];
+    cell.content.text = [_characters[indexPath.row] content];
     
-    
-    
-    Cell.title.text = [[self.characters objectAtIndex: indexPath.row] title];
-    Cell.content.text = [[self.characters objectAtIndex: indexPath.row] title];
-    Cell.userName.text = [[self.characters objectAtIndex: indexPath.row] title];
-    
-    return Cell;
+    return cell;
 }
          
          
-         - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"compose"])
     {
-        if ([segue.identifier isEqualToString:@"EditPosts"]) {
-            EditPosts *editVC = segue.destinationViewController;
-            NSInteger selectedRow = [[self.tableView indexPathForSelectedRow] row];
-            editVC.post = Post[selectedRow];
-        }
+        CreateNewPost *CreateNewPostcontroller = [segue destinationViewController];
+        CreateNewPostcontroller.delegate= self;
+    }
+    else if ([segue.identifier isEqualToString:@"showPostDetail"])
+	{
+		EditPosts *editPostViewController = segue.destinationViewController;
+		NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+		editPostViewController.delegate = self;
+		editPostViewController.titleString = [_characters[indexPath.row] title];
+		editPostViewController.contentString = [_characters[indexPath.row] content];
+		editPostViewController.postIndex = indexPath;
+		
+	}
+}
 
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	return true;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	[self.characters removeObjectAtIndex:indexPath.row];
+	
+	NSString *docsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+	NSString *filename = [docsPath stringByAppendingPathComponent:@"postsArchive"];
+	
+	[NSKeyedArchiver archiveRootObject:_characters
+                             toFile:filename];
+	
+	[self.tableView reloadData];
+	
+	if (_characters.count == 0)
+	{
+		[self.editButton setTitle:@"Edit"];
+	}
+}
+
+- (IBAction)enterEditMode:(id)sender
+{
+	if ([self.tableView isEditing]) {
+		// If the tableView is already in edit mode, turn it off. Also change the title of the button to reflect the intended verb (‘Edit’, in this case).
+		[self.tableView setEditing:NO animated:YES];
+		[self.editButton setTitle:@"Edit"];
+		NSLog(@"Leaving edit mode");
+	}
+	else {
+		[self.editButton setTitle:@"Done"];
+		
+		// Turn on edit mode
+		
+		[self.tableView setEditing:YES animated:YES];
+		NSLog(@"Entering edit mode");
+	}
+}
+
+- (void)addPostToTable:(Post *)newPost
+{
+    [_characters insertObject:newPost atIndex:0];
+	
+	NSString *docsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+	NSString *filename = [docsPath stringByAppendingPathComponent:@"postsArchive"];
+	
+	[NSKeyedArchiver archiveRootObject:_characters toFile:filename];
+    
+    [self.tableView reloadData];
+	
+	NSLog(@"Added new post to posts array");
+}
+
+- (void)editPost:(Post *)post atIndex:(NSIndexPath *)index
+{
+	NSUInteger *postIndex = index.row;
+	[_characters removeObjectAtIndex:postIndex];
+	[self.tableView reloadData];
+	
+	[self addPostToTable:post];
+}
 /*
  // Override to support conditional editing of the table view.
  - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -156,5 +234,5 @@
  }
  
  */
-    }
+
 @end

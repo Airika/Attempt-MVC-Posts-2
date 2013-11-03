@@ -8,7 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Post : NSObject
+@interface Post : NSObject <NSCoding>
+{
+	NSString* mStringValue;
+}
 
 @property (nonatomic) NSString *userName;
 @property (nonatomic) NSString *title;

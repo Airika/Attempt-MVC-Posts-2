@@ -7,7 +7,29 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Textview.h"
+#import "Post.h"
 
-@interface CreateNewPost : UITableViewController
+
+@protocol theProtocol <NSObject>
+
+@optional
+- (void)addPostToTable:(Post *)newPost;
+- (void)editPost:(Post *)post atIndex:(NSIndexPath *)index;
 
 @end
+
+@interface CreateNewPost : UIViewController <UITextViewDelegate>
+
+@property (nonatomic, weak) IBOutlet UITextField *titleText;
+@property (nonatomic, weak) IBOutlet Textview *content;
+@property (nonatomic, weak) IBOutlet UIBarButtonItem *postButton;
+
+@property (nonatomic, weak) id delegate;
+
+- (IBAction)cancelNewPost:(id)sender;
+- (IBAction)savePost:(id)sender;
+
+@end
+
+

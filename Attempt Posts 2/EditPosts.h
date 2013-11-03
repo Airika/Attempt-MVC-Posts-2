@@ -8,18 +8,20 @@
 
 #import <UIKit/UIKit.h>
 #import "EditPosts.h"
+#import "CreateNewPost.h"
+#import "Post.h"
 
-@protocol EditPostsDelegate <NSObject>
 
-- (void)reloadTheTable;
+@interface EditPosts : UIViewController <theProtocol>
 
-@end
+@property (nonatomic, weak) IBOutlet UITextField *titleText;
+@property (nonatomic, weak) IBOutlet Textview *content;
+@property (nonatomic, weak) Post *post;
+@property (nonatomic, weak) NSString *titleString;
+@property (nonatomic, weak) NSString *contentString;
+@property (nonatomic, weak) NSIndexPath *postIndex;
 
-@interface EditPostsDelegate : UIViewController
-
-@property (nonatomic, weak) IBOutlet UITextField *userNameField, *titleField, *contentField, *timeStampField;
-
-@property (nonatomic, weak) id<EditPostsDelegate> delegate;
+@property (nonatomic, weak) id delegate;
 
 - (IBAction)savePost:(id)sender;
 

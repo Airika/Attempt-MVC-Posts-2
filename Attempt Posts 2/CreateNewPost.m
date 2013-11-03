@@ -7,16 +7,18 @@
 //
 
 #import "CreateNewPost.h"
+#import "Post.h"
 
 @interface CreateNewPost ()
-
 @end
 
 @implementation CreateNewPost
 
-- (id)initWithStyle:(UITableViewStyle)style
+@synthesize delegate;
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil;
 {
-    self = [super initWithStyle:style];
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
     }
@@ -26,12 +28,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+	// Do any additional setup after loading the view.
+    self.content.placeholderText = @"Say something...";
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,81 +38,39 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+- (IBAction)cancelNewPost:(id)sender
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    [[self navigationController] popViewControllerAnimated:YES];
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+- (IBAction)savePost:(id)sender
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    NSString *title = self.titleText.text;
+    NSString *content = self.content.text;
     
-    // Configure the cell...
+    Post *newPost = [[Post alloc] init];
+    newPost.userName = @"Ness";
+    newPost.title = title;
+    newPost.content = content;
+
+    CreateNewPost *newPostcontroller = [[CreateNewPost alloc] init];
+    newPostcontroller.delegate = self;
     
-    return cell;
+    [self.delegate addPostToTable:newPost];
+    [[self navigationController] popViewControllerAnimated:YES];
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)textViewDidChange:(UITextView *)textView
 {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a story board-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([textView.text length] > 0)
+    {
+        [self.postButton setEnabled:YES];
+    }
+    else
+    {
+        [self.postButton setEnabled: NO];
+    }
 }
 
- */
 
 @end
